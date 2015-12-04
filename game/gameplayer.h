@@ -16,6 +16,8 @@ public:
     QString getName() const;
     void setName(QString name);
 
+    bool operator <(const GamePlayer &) const;
+
     friend QDebug operator <<(QDebug, const GamePlayer &);
 };
 

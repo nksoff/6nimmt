@@ -17,6 +17,10 @@ void GamePlayer::setName(QString name) {
     _name = name;
 }
 
+bool GamePlayer::operator <(const GamePlayer &p) const {
+    return this->getId() < p.getId();
+}
+
 QDebug operator <<(QDebug debug, const GamePlayer &player) {
     QDebugStateSaver saver(debug);
     debug.nospace()

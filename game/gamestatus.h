@@ -2,9 +2,9 @@
 #define GAMESTATUS
 
 enum GameStatus {
-    NOT_STARTED,    // игра не началась
-    STARTED,        // игра началась
-    FINISHED        // игра завершилась
+    GAME_NOT_STARTED,   // игра не началась
+    GAME_STARTED,       // игра началась
+    GAME_FINISHED       // игра завершилась
 };
 
 #endif // GAMESTATUS

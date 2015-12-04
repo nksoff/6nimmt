@@ -15,7 +15,8 @@ SOURCES += main.cpp \
     game/gamedataprovider.cpp \
     game/gamesessionresult.cpp \
     game/gameresult.cpp \
-    game/gamesessionrow.cpp
+    game/gamesessionrow.cpp \
+    game/gamesessionrender.cpp
 
 RESOURCES += qml.qrc
 
@@ -38,5 +39,7 @@ HEADERS += \
     game/gamestatus.h \
     game/gamesessionresult.h \
     game/gameresult.h \
-    game/gamesessionrow.h
+    game/gamesessionrow.h \
+    game/gamesessionstatus.h \
+    game/gamesessionrender.h
 

@@ -14,14 +14,14 @@ void Game::setStatus(GameStatus status) {
 }
 
 void Game::start() {
-    setStatus(GameStatus::STARTED);
+    setStatus(GameStatus::GAME_STARTED);
 
     GameSession *session = new GameSession(this);
     addSession(session);
 }
 
 void Game::finish() {
-    setStatus(GameStatus::STARTED);
+    setStatus(GameStatus::GAME_FINISHED);
 }
 
 unsigned int Game::getId() const {

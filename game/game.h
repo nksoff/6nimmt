@@ -5,6 +5,7 @@
 #include "game/gamesession.h"
 #include "game/gamestatus.h"
 #include "game/gameplayer.h"
+#include "game/gameresult.h"
 
 class Game
 {
@@ -15,7 +16,7 @@ private:
     std::vector<GamePlayer> _players;
     GamePlayer *_curPlayer;
 public:
-    Game(unsigned int id, GameStatus status = GameStatus::NOT_STARTED);
+    Game(unsigned int id, GameStatus status = GameStatus::GAME_NOT_STARTED);
     ~Game();
 
     void setStatus(GameStatus status);
@@ -32,6 +33,8 @@ public:
     void addSession(GameSession *game);
 
     unsigned int getId() const;
+
+    const GameResult getResult() const;
 
     friend QDebug operator <<(QDebug, const Game &);
 };
