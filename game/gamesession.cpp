@@ -4,4 +4,3 @@ GameSession::GameSession(Game *game)
     : _game(game)
 {
 }
-

@@ -44,6 +44,9 @@ int main()
 
     game->finish();
 
+    delete player1;
+    delete player2;
+
     // end code
 
     delete game;

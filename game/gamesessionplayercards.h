@@ -1,6 +1,7 @@
 #ifndef GAMESESSIONPLAYERCARDS_H
 #define GAMESESSIONPLAYERCARDS_H
 
+#include "game/gamecard.h"
 #include "game/gamecardcollection.h"
 
 class GameSessionPlayerCards

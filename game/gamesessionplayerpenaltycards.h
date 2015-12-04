@@ -10,8 +10,8 @@ private:
 public:
     GameSessionPlayerPenaltyCards();
 
-    void add(GameCard *card);
-    void remove(GameCard *card);
+    void addCard(GameCard *card);
+    void removeCard(GameCard *card);
 };
 
 #endif // GAMESESSIONPLAYERPENALTYCARDS_H

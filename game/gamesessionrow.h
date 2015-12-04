@@ -1,6 +1,8 @@
 #ifndef GAMESESSIONROW_H
 #define GAMESESSIONROW_H
 
+#include "game/gamecard.h"
+#include "game/gamecardcollection.h"
 
 class GameSessionRow
 {
@@ -9,8 +11,8 @@ private:
 public:
     GameSessionRow();
 
-    void add(GameCard *card);
-    void remove(GameCard *card);
+    void addCard(GameCard *card);
+    void removeCard(GameCard *card);
 };
 
 #endif // GAMESESSIONROW_H
