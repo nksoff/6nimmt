@@ -2,7 +2,10 @@
 #include <QQmlApplicationEngine>
 #include <QDebug>
 
-int main()
+#include "lib/application.h"
+
+int main(int argc, char **argv)
 {
-    return 0;
+    Application app(argc, argv);
+    return app.exec();
 }
