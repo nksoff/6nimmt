@@ -1,11 +1,14 @@
-#include <QGuiApplication>
+#include <QApplication>
 #include <QQmlApplicationEngine>
-#include <QDebug>
+#include <QMessageBox>
 
-#include "lib/application.h"
+#include "lib/mainwindow.h"
+#include "lib/ownexception.h"
 
 int main(int argc, char **argv)
 {
-    Application app(argc, argv);
+    QApplication app(argc, argv);
+    MainWindow mainWin;
+    mainWin.show();
     return app.exec();
 }
