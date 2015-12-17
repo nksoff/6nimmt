@@ -26,7 +26,7 @@ for($i = 0; $i < 4; $i++) {
     echo $sub[$i];
 }
 
-echo '===';
+echo '=';
 
 for($i = 0; $i < 10; $i++) {
     if($i > 0) {
@@ -35,7 +35,7 @@ for($i = 0; $i < 10; $i++) {
     echo $sub1[$i];
 }
 
-echo '===';
+echo '=';
 
 for($i = 0; $i < 10; $i++) {
     if($i > 0) {
