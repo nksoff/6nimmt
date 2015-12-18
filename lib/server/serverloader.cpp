@@ -49,22 +49,21 @@ GameData ServerLoader::createGame() const {
                 result = str;
                 break;
             }
-            qDebug() << QString(str.c_str());
+            // qDebug() << QString(str.c_str());
             if(str == "\r") {
                 nextIsResult = true;
             }
         }
-        qDebug() << "\n";
+        // qDebug() << "\n";
 
         boost::system::error_code error;
         while (boost::asio::read(socket, response,
-            boost::asio::transfer_at_least(1), error))
-            qDebug() << &response;
+            boost::asio::transfer_at_least(1), error)) {}
         if (error != boost::asio::error::eof)
             throw boost::system::system_error(error);
     }
     catch(std::exception &e) {
-        qDebug() << "BOOST:" << e.what() << endl;
+        // qDebug() << "BOOST:" << e.what() << endl;
         GameData data;
         data.setError("Cannot load cards");
         return data;
@@ -76,7 +75,7 @@ GameData ServerLoader::createGame() const {
     }
     else
     {
-        qDebug() << QString(result.c_str());
+        // qDebug() << QString(result.c_str());
         std::istringstream tmp(result);
         std::vector<unsigned short> cards;
         unsigned short tmpCard;
@@ -85,7 +84,7 @@ GameData ServerLoader::createGame() const {
         for(size_t i = 0; i < ServerLoader::CARDS_PER_USER * ServerLoader::USERS + ServerLoader::CARDS_FIELD; i++) {
             tmp >> tmpCard;
             cards.push_back(tmpCard);
-            qDebug() << cards[i];
+            // qDebug() << cards[i];
             if(i != ServerLoader::CARDS_PER_USER * ServerLoader::USERS + ServerLoader::CARDS_FIELD - 1) {
                 tmp >> delimiter;
             }
