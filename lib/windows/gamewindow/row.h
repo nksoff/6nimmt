@@ -1,7 +1,9 @@
 #ifndef ROW_H
 #define ROW_H
 
-#include "card.h"
+#include "lib/main.h"
+
+#include "lib/windows/gamewindow/card.h"
 
 #include <QWidget>
 

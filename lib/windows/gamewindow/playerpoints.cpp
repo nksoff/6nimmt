@@ -4,6 +4,7 @@ PlayerPoints::PlayerPoints(QWidget *parent) : QWidget(parent), count(0)
 {
     resize(PlayerPoints::DEFAULT_WIDTH, PlayerPoints::DEFAULT_HEIGHT);
     label = new QLabel("0", this);
+    checkNullPointer(label);
     label->setStyleSheet(PlayerPoints::DEFAULT_STYLE);
     label->move(PlayerPoints::DEFAULT_X_SPACE, PlayerPoints::DEFAULT_Y_SPACE);
     label->resize(PlayerPoints::DEFAULT_WIDTH, PlayerPoints::DEFAULT_HEIGHT);

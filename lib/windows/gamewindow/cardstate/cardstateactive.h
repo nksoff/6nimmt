@@ -1,9 +1,11 @@
 #ifndef CARDSTATEACTIVE_H
 #define CARDSTATEACTIVE_H
 
-#include "cardstate.h"
-#include "card.h"
-#include "gamewindow.h"
+#include "lib/main.h"
+
+#include "lib/windows/gamewindow/cardstate/cardstate.h"
+#include "lib/windows/gamewindow/card.h"
+#include "lib/windows/gamewindow.h"
 
 #include <QApplication>
 #include <QCursor>

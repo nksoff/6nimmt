@@ -1,6 +1,8 @@
 #ifndef GAMEDATA_H
 #define GAMEDATA_H
 
+#include "lib/main.h"
+
 #include <vector>
 #include <string>
 

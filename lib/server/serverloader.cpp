@@ -65,11 +65,13 @@ GameData ServerLoader::createGame() const {
     }
     catch(std::exception &e) {
         qDebug() << "BOOST:" << e.what() << endl;
+        throwError("Server connection error. Sorry!");
     }
 
     GameData data;
     if(result.size() == 0) {
         data.setError("Cannot load cards");
+        throwError("Server connection error. Sorry!");
     }
     else
     {
@@ -90,6 +92,7 @@ GameData ServerLoader::createGame() const {
 
         if(cards.size() < ServerLoader::CARDS_PER_USER * ServerLoader::USERS + ServerLoader::CARDS_FIELD) {
             data.setError("Server error");
+            throwError("Server connection error. Sorry!");
         }
         else
         {

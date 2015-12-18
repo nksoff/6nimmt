@@ -1,7 +1,9 @@
 #ifndef SERVERLOADER_H
 #define SERVERLOADER_H
 
-#include "gamedata.h"
+#include "lib/main.h"
+
+#include "lib/server/gamedata.h"
 
 #include <QDebug>
 

@@ -1,7 +1,9 @@
 #ifndef PLAYERCARDSCONTAINER_H
 #define PLAYERCARDSCONTAINER_H
 
-#include "card.h"
+#include "lib/main.h"
+
+#include "lib/windows/gamewindow/card.h"
 
 #include <QWidget>
 #include <QRect>

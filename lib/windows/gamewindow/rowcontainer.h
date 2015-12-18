@@ -1,8 +1,10 @@
 #ifndef ROWCONTAINER_H
 #define ROWCONTAINER_H
 
+#include "lib/main.h"
+
 class Row;
-#include "row.h"
+#include "lib/windows/gamewindow/row.h"
 
 #include <QWidget>
 #include <QRect>

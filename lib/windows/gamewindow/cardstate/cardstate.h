@@ -1,6 +1,8 @@
 #ifndef CARDSTATE_H
 #define CARDSTATE_H
 
+#include "lib/main.h"
+
 class Card;
 
 #include <QEvent>

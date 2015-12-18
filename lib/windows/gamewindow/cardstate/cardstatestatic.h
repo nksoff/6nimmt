@@ -1,8 +1,10 @@
 #ifndef CARDSTATESTATIC_H
 #define CARDSTATESTATIC_H
 
-#include "cardstate.h"
-#include "card.h"
+#include "lib/main.h"
+
+#include "lib/windows/gamewindow/cardstate/cardstate.h"
+#include "lib/windows/gamewindow/card.h"
 
 class CardStateStatic : public CardState
 {

@@ -1,6 +1,8 @@
 #ifndef PLAYERPOINTS_H
 #define PLAYERPOINTS_H
 
+#include "lib/main.h"
+
 #include <QLabel>
 #include <QWidget>
 #include <QPainter>

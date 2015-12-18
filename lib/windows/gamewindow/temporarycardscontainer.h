@@ -1,6 +1,8 @@
 #ifndef TEMPORARYCARDSCONTAINER_H
 #define TEMPORARYCARDSCONTAINER_H
 
+#include "lib/main.h"
+
 #include <QWidget>
 #include <QPainter>
 

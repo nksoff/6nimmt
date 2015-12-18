@@ -1,10 +1,12 @@
 #ifndef CARD_H
 #define CARD_H
 
+#include "lib/main.h"
+
 class GameWindow;
-#include "cardstate.h"
-#include "cardstateactive.h"
-#include "cardstatestatic.h"
+#include "lib/windows/gamewindow/cardstate/cardstate.h"
+#include "lib/windows/gamewindow/cardstate/cardstateactive.h"
+#include "lib/windows/gamewindow/cardstate/cardstatestatic.h"
 
 #include <QWidget>
 #include <QLabel>

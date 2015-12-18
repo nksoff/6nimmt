@@ -1,15 +1,17 @@
 #ifndef GAMEWINDOW_H
 #define GAMEWINDOW_H
 
+#include "lib/main.h"
+
 class Card;
 class PlayerCardsContainer;
 class RowContainer;
-#include "card.h"
-#include "serverloader.h"
-#include "playercardscontainer.h"
-#include "playerpoints.h"
-#include "temporarycardscontainer.h"
-#include "rowcontainer.h"
+#include "lib/windows/gamewindow/card.h"
+#include "lib/server/serverloader.h"
+#include "lib/windows/gamewindow/playercardscontainer.h"
+#include "lib/windows/gamewindow/playerpoints.h"
+#include "lib/windows/gamewindow/temporarycardscontainer.h"
+#include "lib/windows/gamewindow/rowcontainer.h"
 
 #include <QWidget>
 #include <QImage>
@@ -33,7 +35,7 @@ class GameWindow : public QWidget
     const int DEFAULT_Y_SPACE = 20;
 
     const QString GAME_END_WON = "You won!!! Congratulations!";
-    const QString GAME_END_LOST = "You lost!";
+    const QString GAME_END_LOST = "You lose!";
 
     GameData gameData;
 
@@ -42,6 +44,8 @@ class GameWindow : public QWidget
     TemporaryCardsContainer *temporaryCardsContainer;
     PlayerPoints *playerPoints;
     PlayerPoints *serverPoints;
+
+    virtual void closeEvent(QCloseEvent *);
 
 public:
     explicit GameWindow(QWidget *parent = 0);

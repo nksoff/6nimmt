@@ -8,6 +8,11 @@ RowContainer::RowContainer(QWidget *parent) : QWidget(parent)
 
     for(size_t i = 0; i < RowContainer::ROWS; i++) {
         Row *row = new Row(this);
+        checkNullPointer(row, [=]() {
+            for(size_t i = 0; i < rows.size(); i++) {
+                delete rows.at(i);
+            }
+        });
         row->move(RowContainer::DEFAULT_X_SPACE,
                   i * (row->geometry().height() + RowContainer::DEFAULT_Y_SPACE));
         row->show();

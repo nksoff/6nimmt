@@ -1,7 +1,9 @@
 #ifndef MAINWINDOW_H
 #define MAINWINDOW_H
 
-#include "gamewindow.h"
+#include "lib/main.h"
+
+#include "lib/windows/gamewindow.h"
 
 #include <QMainWindow>
 #include <QLabel>

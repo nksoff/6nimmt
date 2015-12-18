@@ -5,6 +5,7 @@ Card::Card(unsigned short num, GameWindow *window, QWidget *parent)
       number(num), gameWindow(window)
 {
     state = new CardStateStatic(this);
+    checkNullPointer(state);
 
     std::string path = std::string(Card::IMG_PATH) + std::to_string(number) + std::string(Card::IMG_EXT);
 
@@ -16,6 +17,9 @@ Card::Card(unsigned short num, GameWindow *window, QWidget *parent)
     resize(width, height);
 
     label = new QLabel(this);
+    checkNullPointer(label, [=]() {
+        delete state;
+    });
     label->setGeometry(0, 0, width, height);
     label->setPixmap(logo);
     label->show();
@@ -33,6 +37,7 @@ void Card::setActive()
     {
         delete state;
         CardState *nState = new CardStateActive(this);
+        checkNullPointer(nState);
         state = nState;
     }
 }
@@ -43,6 +48,7 @@ void Card::setStatic()
     {
         delete state;
         CardState *nState = new CardStateStatic(this);
+        checkNullPointer(nState);
         state = nState;
     }
 }

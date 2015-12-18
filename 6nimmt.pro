@@ -1,23 +1,24 @@
 TEMPLATE = app
 
 QT += qml quick widgets
-CONFIG += c++11
+CONFIG += c++11 -Wno-unused-local-typedef
 
 SOURCES += main.cpp \
-    lib/mainwindow.cpp \
+    lib/windows/gamewindow/cardstate/cardstate.cpp \
+    lib/windows/gamewindow/cardstate/cardstateactive.cpp \
+    lib/windows/gamewindow/cardstate/cardstatestatic.cpp \
+    lib/windows/gamewindow/card.cpp \
+    lib/windows/gamewindow/playercardscontainer.cpp \
+    lib/windows/gamewindow/playerpoints.cpp \
+    lib/windows/gamewindow/row.cpp \
+    lib/windows/gamewindow/rowcontainer.cpp \
+    lib/windows/gamewindow/temporarycardscontainer.cpp \
+    lib/windows/gamewindow.cpp \
+    lib/windows/mainwindow.cpp \
     lib/ownexception.cpp \
-    lib/gamewindow.cpp \
-    lib/serverloader.cpp \
-    lib/gamedata.cpp \
-    lib/row.cpp \
-    lib/rowcontainer.cpp \
-    lib/card.cpp \
-    lib/playercardscontainer.cpp \
-    lib/playerpoints.cpp \
-    lib/temporarycardscontainer.cpp \
-    lib/cardstate.cpp \
-    lib/cardstatestatic.cpp \
-    lib/cardstateactive.cpp
+    lib/server/gamedata.cpp \
+    lib/server/serverloader.cpp \
+    lib/application.cpp
 
 RESOURCES += \
     static/resources.qrc
@@ -33,19 +34,20 @@ QML_IMPORT_PATH =
 include(deployment.pri)
 
 HEADERS += \
-    lib/mainwindow.h \
-    lib/ownexception.h \
-    lib/gamewindow.h \
-    lib/serverloader.h \
-    lib/gamedata.h \
-    lib/row.h \
-    lib/rowcontainer.h \
-    lib/card.h \
-    lib/playercardscontainer.h \
-    lib/playerpoints.h \
-    lib/temporarycardscontainer.h \
-    lib/cardstate.h \
-    lib/cardstatestatic.h \
-    lib/cardstateactive.h
+    lib/application.h \
+    lib/main.h \
+    lib/server/gamedata.h \
+    lib/server/serverloader.h \
+    lib/windows/gamewindow/cardstate/cardstate.h \
+    lib/windows/gamewindow/cardstate/cardstateactive.h \
+    lib/windows/gamewindow/cardstate/cardstatestatic.h \
+    lib/windows/gamewindow/card.h \
+    lib/windows/gamewindow/playercardscontainer.h \
+    lib/windows/gamewindow/playerpoints.h \
+    lib/windows/gamewindow/row.h \
+    lib/windows/gamewindow/rowcontainer.h \
+    lib/windows/gamewindow/temporarycardscontainer.h \
+    lib/windows/gamewindow.h \
+    lib/windows/mainwindow.h
 
 DISTFILES +=

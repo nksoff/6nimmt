@@ -18,6 +18,7 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), gameWindow(NULL)
 
 
     QLabel *header = new QLabel(this);
+    checkNullPointer(header);
     header->setGeometry(MainWindow::PIC_LOGO_X,
                         MainWindow::PIC_LOGO_Y,
                         MainWindow::PIC_LOGO_WIDTH,
@@ -29,6 +30,9 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), gameWindow(NULL)
     toDelete.push_back(header);
 
     QPushButton *button = new QPushButton(MainWindow::START_GAME, this);
+    checkNullPointer(button, [=]() {
+        delete header;
+    });
     button->setGeometry(header->geometry().x(),
                         header->geometry().bottom(),
                         header->geometry().width(),
@@ -50,6 +54,7 @@ MainWindow::~MainWindow()
 void MainWindow::startNewGame()
 {
     gameWindow = new GameWindow;
+    checkNullPointer(gameWindow);
     gameWindow->show();
     toDelete.push_back(gameWindow);
 }
