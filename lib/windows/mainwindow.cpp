@@ -6,6 +6,7 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), gameWindow(NULL)
     QSettings settings(MainWindow::APP_NAME, MainWindow::APP_NAME);
     QPoint pos = settings.value("pos", MainWindow::DEFAULT_POSITION).toPoint();
     QSize size = settings.value("size", QSize(MainWindow::DEFAULT_WIDTH, MainWindow::DEFAULT_HEIGHT)).toSize();
+    setFixedSize(size);
     resize(size);
     move(pos);
 

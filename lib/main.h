@@ -4,8 +4,8 @@
 #include <functional>
 #include "lib/ownexception.h"
 
-inline void throwError(const std::string &str) {
-    throw OwnException(str);
+inline void throwError(const std::string &str, bool isFatal = true) {
+    throw OwnException(str, isFatal);
 }
 
 inline void checkNullPointer(void *pointer, std::function<void()> onError = [](){}) {

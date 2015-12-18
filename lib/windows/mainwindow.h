@@ -32,7 +32,7 @@ class MainWindow : public QMainWindow
     const int PIC_LOGO_HEIGHT = 200;
     const QString PIC_LOGO = ":/cards/6.png";
 
-    const QString START_GAME = "Start a game";
+    const QString START_GAME = "Start a new game";
     const int START_GAME_BUTTON_HEIGHT = 40;
 
     std::vector<QWidget *> toDelete;

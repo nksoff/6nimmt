@@ -2,17 +2,23 @@
 
 GameWindow::GameWindow(QWidget *parent) : QWidget(parent)
 {
+    QSize size(GameWindow::DEFAULT_WIDTH, GameWindow::DEFAULT_HEIGHT);
     QPixmap bkgnd(GameWindow::BACKGROUND_FILE);
-    bkgnd = bkgnd.scaled(QSize(GameWindow::DEFAULT_WIDTH,
-                               GameWindow::DEFAULT_HEIGHT),
+    bkgnd = bkgnd.scaled(size,
                          Qt::IgnoreAspectRatio);
     QPalette palette;
     palette.setBrush(QPalette::Background, bkgnd);
     setPalette(palette);
-    resize(GameWindow::DEFAULT_WIDTH, GameWindow::DEFAULT_HEIGHT);
+    setFixedSize(size);
 
     ServerLoader loader;
     gameData = loader.createGame();
+
+    if(gameData.isError()) {
+        throwError("Couldn't load server data. Sorry :(", false);
+        close();
+        return;
+    }
 
     rowContainer = new RowContainer(this);
     checkNullPointer(rowContainer);

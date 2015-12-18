@@ -48,6 +48,7 @@ HEADERS += \
     lib/windows/gamewindow/rowcontainer.h \
     lib/windows/gamewindow/temporarycardscontainer.h \
     lib/windows/gamewindow.h \
-    lib/windows/mainwindow.h
+    lib/windows/mainwindow.h \
+    lib/ownexception.h
 
 DISTFILES +=
