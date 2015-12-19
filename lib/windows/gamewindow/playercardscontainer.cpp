@@ -22,7 +22,8 @@ void PlayerCardsContainer::paintEvent(QPaintEvent *)
 
 void PlayerCardsContainer::setCards(std::vector<Card *> newCards)
 {
-    for(size_t i = 0; i < newCards.size(); i++) {
+    for(size_t i = 0; i < newCards.size(); i++)
+    {
         newCards[i]->setParent(this);
         newCards[i]->show();
 
@@ -35,14 +36,16 @@ void PlayerCardsContainer::setCards(std::vector<Card *> newCards)
 
 PlayerCardsContainer::~PlayerCardsContainer()
 {
-    for(size_t i = 0; i < cards.size(); i++) {
+    for(size_t i = 0; i < cards.size(); i++)
+    {
         if(cards.at(i) != NULL) delete cards.at(i);
     }
 }
 
 void PlayerCardsContainer::remove(Card *card)
 {
-    for(size_t i = 0; i < cards.size(); i++) {
+    for(size_t i = 0; i < cards.size(); i++)
+    {
         if(cards[i] == card) {
             cards[i] = NULL;
             break;
@@ -53,8 +56,10 @@ void PlayerCardsContainer::remove(Card *card)
 size_t PlayerCardsContainer::countLeft() const
 {
     size_t count = 0;
-    for(size_t i = 0; i < cards.size(); i++) {
-        if(cards[i] != NULL) {
+    for(size_t i = 0; i < cards.size(); i++)
+    {
+        if(cards[i] != NULL)
+        {
             count++;
         }
     }

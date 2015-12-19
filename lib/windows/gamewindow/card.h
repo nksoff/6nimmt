@@ -8,9 +8,7 @@ class GameWindow;
 #include "lib/windows/gamewindow/cardstate/cardstateactive.h"
 #include "lib/windows/gamewindow/cardstate/cardstatestatic.h"
 
-#include <QWidget>
 #include <QLabel>
-#include <QDebug>
 
 #include <string>
 

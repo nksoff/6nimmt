@@ -12,7 +12,6 @@
 #include <QMessageBox>
 #include <QSettings>
 #include <QImage>
-#include <QDebug>
 
 #include <vector>
 

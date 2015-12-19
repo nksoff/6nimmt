@@ -3,7 +3,6 @@
 
 #include "lib/main.h"
 
-#include <QWidget>
 #include <QPainter>
 
 class TemporaryCardsContainer : public QWidget

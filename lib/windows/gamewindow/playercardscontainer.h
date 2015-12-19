@@ -5,7 +5,6 @@
 
 #include "lib/windows/gamewindow/card.h"
 
-#include <QWidget>
 #include <QRect>
 #include <QPainter>
 

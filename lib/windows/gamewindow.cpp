@@ -135,18 +135,22 @@ void GameWindow::selectPlayerCard(Card *card)
     }
 }
 
-void GameWindow::selectServerCard(Card *card) {
+void GameWindow::selectServerCard(Card *card)
+{
     addServerPoints(rowContainer->addCard(card));
 }
 
-void GameWindow::closeEvent(QCloseEvent *event) {
-    if(playerCardsContainer->countLeft() != 0) {
+void GameWindow::closeEvent(QCloseEvent *event)
+{
+    if(playerCardsContainer->countLeft() != 0)
+    {
         QMessageBox::StandardButton res = QMessageBox::question(this,
                                                                 QApplication::applicationDisplayName(),
                                                                 tr("The game is not finished yet. Are you sure you want to close the window?"),
                                                                 QMessageBox::Cancel | QMessageBox::Yes,
                                                                 QMessageBox::Cancel);
-        if(res == QMessageBox::Yes) {
+        if(res == QMessageBox::Yes)
+        {
             event->accept();
         }
         else

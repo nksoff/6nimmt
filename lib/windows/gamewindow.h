@@ -13,7 +13,6 @@ class RowContainer;
 #include "lib/windows/gamewindow/temporarycardscontainer.h"
 #include "lib/windows/gamewindow/rowcontainer.h"
 
-#include <QWidget>
 #include <QImage>
 #include <QMessageBox>
 

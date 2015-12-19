@@ -6,7 +6,6 @@
 class Row;
 #include "lib/windows/gamewindow/row.h"
 
-#include <QWidget>
 #include <QRect>
 
 class RowContainer : public QWidget

@@ -5,9 +5,11 @@ ServerLoader::ServerLoader()
 {
 }
 
-GameData ServerLoader::createGame() const {
+GameData ServerLoader::createGame() const
+{
     std::string result;
-    try {
+    try
+    {
         boost::asio::io_service io_service;
         tcp::resolver resolver(io_service);
         tcp::resolver::query query(tcp::v4(), ServerLoader::HOST, ServerLoader::PORT);
@@ -44,13 +46,16 @@ GameData ServerLoader::createGame() const {
 
         std::string str;
         bool nextIsResult = false;
-        while(std::getline(response_stream, str)) {
-            if(nextIsResult) {
+        while(std::getline(response_stream, str))
+        {
+            if(nextIsResult)
+            {
                 result = str;
                 break;
             }
             // qDebug() << QString(str.c_str());
-            if(str == "\r") {
+            if(str == "\r")
+            {
                 nextIsResult = true;
             }
         }
@@ -62,7 +67,8 @@ GameData ServerLoader::createGame() const {
         if (error != boost::asio::error::eof)
             throw boost::system::system_error(error);
     }
-    catch(std::exception &e) {
+    catch(std::exception &)
+    {
         // qDebug() << "BOOST:" << e.what() << endl;
         GameData data;
         data.setError("Cannot load cards");
@@ -70,7 +76,8 @@ GameData ServerLoader::createGame() const {
     }
 
     GameData data;
-    if(result.size() == 0) {
+    if(result.size() == 0)
+    {
         data.setError("Cannot load cards");
     }
     else
@@ -81,28 +88,35 @@ GameData ServerLoader::createGame() const {
         unsigned short tmpCard;
 
         char delimiter;
-        for(size_t i = 0; i < ServerLoader::CARDS_PER_USER * ServerLoader::USERS + ServerLoader::CARDS_FIELD; i++) {
+        for(size_t i = 0; i < ServerLoader::CARDS_PER_USER * ServerLoader::USERS + ServerLoader::CARDS_FIELD; i++)
+        {
             tmp >> tmpCard;
             cards.push_back(tmpCard);
             // qDebug() << cards[i];
-            if(i != ServerLoader::CARDS_PER_USER * ServerLoader::USERS + ServerLoader::CARDS_FIELD - 1) {
+            if(i != ServerLoader::CARDS_PER_USER * ServerLoader::USERS + ServerLoader::CARDS_FIELD - 1)
+            {
                 tmp >> delimiter;
             }
         }
 
-        if(cards.size() < ServerLoader::CARDS_PER_USER * ServerLoader::USERS + ServerLoader::CARDS_FIELD) {
+        if(cards.size() < ServerLoader::CARDS_PER_USER * ServerLoader::USERS + ServerLoader::CARDS_FIELD)
+        {
             data.setError("Server error");
         }
         else
         {
-            for(size_t i = 0; i < ServerLoader::CARDS_FIELD; i++) {
+            for(size_t i = 0; i < ServerLoader::CARDS_FIELD; i++)
+            {
                 data.getFieldCards().push_back(cards[i]);
             }
-            if(ServerLoader::USERS == 2) {
-                for(size_t i = ServerLoader::CARDS_FIELD; i < ServerLoader::CARDS_FIELD + ServerLoader::CARDS_PER_USER; i++) {
+            if(ServerLoader::USERS == 2)
+            {
+                for(size_t i = ServerLoader::CARDS_FIELD; i < ServerLoader::CARDS_FIELD + ServerLoader::CARDS_PER_USER; i++)
+                {
                     data.getPlayerCards().push_back(cards[i]);
                 }
-                for(size_t i = ServerLoader::CARDS_FIELD + ServerLoader::CARDS_PER_USER; i < ServerLoader::CARDS_FIELD + ServerLoader::CARDS_PER_USER * 2; i++) {
+                for(size_t i = ServerLoader::CARDS_FIELD + ServerLoader::CARDS_PER_USER; i < ServerLoader::CARDS_FIELD + ServerLoader::CARDS_PER_USER * 2; i++)
+                {
                     data.getServerCards().push_back(cards[i]);
                 }
             }

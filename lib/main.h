@@ -1,6 +1,10 @@
 #ifndef MAIN_H
 #define MAIN_H
 
+// common #include-s
+#include <QWidget>
+#include <QDebug>
+
 #include <functional>
 #include "lib/ownexception.h"
 

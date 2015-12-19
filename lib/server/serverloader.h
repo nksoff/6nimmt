@@ -5,8 +5,6 @@
 
 #include "lib/server/gamedata.h"
 
-#include <QDebug>
-
 #include <boost/config/warning_disable.hpp>
 #include <boost/asio.hpp>
 

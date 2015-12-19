@@ -4,7 +4,6 @@
 #include "lib/main.h"
 
 #include <QLabel>
-#include <QWidget>
 #include <QPainter>
 
 class PlayerPoints : public QWidget

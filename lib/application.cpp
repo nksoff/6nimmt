@@ -10,9 +10,11 @@ bool Application::notify(QObject *receiver, QEvent *event)
     {
         return QApplication::notify(receiver, event);
     }
-    catch(OwnException &exc) {
+    catch(OwnException &exc)
+    {
         QMessageBox::critical(NULL, applicationDisplayName(), exc.what());
-        if(exc.isFatal()){
+        if(exc.isFatal())
+        {
             exit();
         }
     }

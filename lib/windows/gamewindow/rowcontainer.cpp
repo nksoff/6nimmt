@@ -1,15 +1,17 @@
 #include "rowcontainer.h"
 #include <QPainter>
-#include <QDebug>
 
 RowContainer::RowContainer(QWidget *parent) : QWidget(parent)
 {
     resize(RowContainer::DEFAULT_WIDTH, RowContainer::DEFAULT_HEIGHT);
 
-    for(size_t i = 0; i < RowContainer::ROWS; i++) {
+    for(size_t i = 0; i < RowContainer::ROWS; i++)
+    {
         Row *row = new Row(this);
-        checkNullPointer(row, [=]() {
-            for(size_t i = 0; i < rows.size(); i++) {
+        checkNullPointer(row, [=]()
+        {
+            for(size_t i = 0; i < rows.size(); i++)
+            {
                 delete rows.at(i);
             }
         });
@@ -27,27 +29,34 @@ RowContainer::~RowContainer() {
 }
 
 short RowContainer::addCard(Card *card) {
-    for(size_t i = 0; i < RowContainer::ROWS; i++) {
-        if(rows[i]->count() == 0) {
+    for(size_t i = 0; i < RowContainer::ROWS; i++)
+    {
+        if(rows[i]->count() == 0)
+        {
             return rows[i]->addCard(card);
         }
     }
 
     short delta[RowContainer::ROWS];
-    for(size_t i = 0; i < RowContainer::ROWS; i++) {
+    for(size_t i = 0; i < RowContainer::ROWS; i++)
+    {
         delta[i] = card->getNumber() - rows[i]->getLastCard()->getNumber();
-        if(delta[i] < 0) {
+        if(delta[i] < 0)
+        {
             delta[i] = 0;
         }
     }
 
     short min = Card::MAX_NUMBER;
     size_t minKey = 0;
-    for(size_t i = 1; i < RowContainer::ROWS; i++) {
-        if(delta[i] == 0) {
+    for(size_t i = 1; i < RowContainer::ROWS; i++)
+    {
+        if(delta[i] == 0)
+        {
             continue;
         }
-        if(delta[i] < min) {
+        if(delta[i] < min)
+        {
             min = delta[i];
             minKey = i;
         }
@@ -56,7 +65,8 @@ short RowContainer::addCard(Card *card) {
     return rows[minKey]->addCard(card);
 }
 
-void RowContainer::paintEvent(QPaintEvent *) {
+void RowContainer::paintEvent(QPaintEvent *)
+{
     QPainter painter(this);
     painter.setRenderHint(QPainter::Antialiasing);
     painter.setPen(RowContainer::BACKGROUND_COLOR);

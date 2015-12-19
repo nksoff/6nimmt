@@ -5,8 +5,6 @@
 
 #include "lib/windows/gamewindow/card.h"
 
-#include <QWidget>
-
 class Row : public QWidget
 {
     Q_OBJECT

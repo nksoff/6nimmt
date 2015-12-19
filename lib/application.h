@@ -6,6 +6,8 @@
 #include <QApplication>
 #include <QMessageBox>
 
+#include <string>
+
 class Application : public QApplication
 {
 public:
