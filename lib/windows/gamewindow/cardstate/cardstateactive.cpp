@@ -31,7 +31,7 @@ void CardStateActive::leaveEvent(QEvent *)
 
 void CardStateActive::mouseReleaseEvent(QMouseEvent *)
 {
-    getParent()->getGameWindow()->selectCard(getParent());
+    getParent()->getGameWindow()->selectPlayerCard(getParent());
 }
 
 CardStateActive::~CardStateActive()

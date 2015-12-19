@@ -53,7 +53,8 @@ public:
 
     void addPlayerPoints(short);
     void addServerPoints(short);
-    void selectCard(Card *);
+    void selectPlayerCard(Card *);
+    void selectServerCard(Card *);
 };
 
 #endif // GAMEWINDOW_H

@@ -1,7 +1,7 @@
 TEMPLATE = app
 
 QT += qml quick widgets
-CONFIG += c++11 -Wno-unused-local-typedef
+CONFIG += c++11
 
 SOURCES += main.cpp \
     lib/windows/gamewindow/cardstate/cardstate.cpp \
@@ -24,8 +24,8 @@ RESOURCES += \
     static/resources.qrc
 
 INCLUDEPATH += /usr/local/Cellar/boost/1.58.0/include
-LIBS += -L/usr/local/Cellar/boost/1.58.0/lib
-LIBS += -lboost_system-mt -lboost_filesystem-mt
+LIBS += -L/usr/local/Cellar/boost/1.58.0/lib -isystem /usr/local/Cellar/boost/1.58.0/include
+LIBS += -lboost_system-mt -lboost_filesystem-mt -Wno-unused-local-typedef
 
 # Additional import path used to resolve QML modules in Qt Creator's code model
 QML_IMPORT_PATH =

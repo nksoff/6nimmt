@@ -107,7 +107,7 @@ void GameWindow::addServerPoints(short n)
     serverPoints->add(n);
 }
 
-void GameWindow::selectCard(Card *card)
+void GameWindow::selectPlayerCard(Card *card)
 {
     card->hide();
     card->setStatic();
@@ -118,9 +118,9 @@ void GameWindow::selectCard(Card *card)
     std::shuffle(std::begin(gameData.getServerCards()), std::end(gameData.getServerCards()), engine);
 
     Card *serverCard = new Card(gameData.getServerCards().at(gameData.getServerCards().size() - 1), this);
-    checkNullPointer(serverCard);
     gameData.getServerCards().pop_back();
-    addServerPoints(rowContainer->addCard(serverCard));
+    checkNullPointer(serverCard);
+    selectServerCard(serverCard);
 
     if(playerCardsContainer->countLeft() == 0)
     {
@@ -133,6 +133,10 @@ void GameWindow::selectCard(Card *card)
                     );
         close();
     }
+}
+
+void GameWindow::selectServerCard(Card *card) {
+    addServerPoints(rowContainer->addCard(card));
 }
 
 void GameWindow::closeEvent(QCloseEvent *event) {

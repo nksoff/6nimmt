@@ -22,7 +22,7 @@ class MainWindow : public QMainWindow
 
     const QString APP_NAME = "6 nimmt!";
     const QString BACKGROUND_FILE = ":/background.jpg";
-    const QPoint  DEFAULT_POSITION = QPoint(70, 70);
+    const QPoint  DEFAULT_POSITION = QPoint(570, 70);
     const int DEFAULT_WIDTH = 300;
     const int DEFAULT_HEIGHT = 400;
 
