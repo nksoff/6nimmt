@@ -14,8 +14,8 @@ inline static void throwError(const std::string &str, bool isFatal = true) {
 
 inline static void checkNullPointer(void *pointer, std::function<void()> onError = [](){}) {
     if(pointer == NULL) {
-        throwError("Couldn't allocate memory. Sorry!");
         onError();
+        throwError("Couldn't allocate memory. Sorry!");
     }
 }
 
