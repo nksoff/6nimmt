@@ -14,7 +14,7 @@ short Row::addCard(Card *card)
                 (card->getNumber() < getLastCard()->getNumber()))
         {
             points = getPoints();
-            for(size_t i = cards.size() - 1; i >= 0; i--)
+            for(int i = cards.size() - 1; i >= 0; i--)
             {
                 delete cards.at(i);
                 cards.pop_back();
