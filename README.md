@@ -1,2 +1,3 @@
 # 6nimmt
-Игра "Корова 006"
+
+The "6 :cow:" ["6 nimmt" or ":cow: 006"] game
